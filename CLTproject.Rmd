@@ -125,7 +125,7 @@ p + ggtitle("n = 25") +
 
 print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
 ```
-
+The standard dev was approximately 41.73 the first time. Then we ran it again as k16 and got approximately 10.50 . I expect the number of k25 to be half of k16 and it was close this number was approximately 8.50. This number is of by about 3 from half of 10.5.
 
 
 
