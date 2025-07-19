@@ -128,7 +128,25 @@ print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
 The standard dev was approximately 41.73 the first time. Then we ran it again as k16 and got approximately 10.50 . I expect the number of k25 to be half of k16 and it was close this number was approximately 8.50. This number is of by about 3 from half of 10.5.
 
 
+```{r}
+numb = 36
+Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+my1000$k36 = x.avg
 
+
+p <- ggplot(my1000, aes(x=k36),col=sex) + 
+  geom_density() + 
+
+# Add mean line
+ geom_vline(aes(xintercept=mean(k36)),
+            color="blue", linetype="dashed", size=1)
+p + ggtitle("n = 36") +
+  xlab("temperature") + ylab(" density")
+
+print(paste('mean = ', mean(my1000$k36),' sd = ',sd(my1000$k36)))
+```
 
 
 
